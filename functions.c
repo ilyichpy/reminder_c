@@ -1,4 +1,5 @@
 #include "functions.h"
+// #include <time.h>
 
 int current_time() {
     int hours, minutes;
