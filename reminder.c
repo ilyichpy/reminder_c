@@ -11,7 +11,7 @@ int main() {
 void input() {
 
     char remind = '0';
-    int flag = 1;
+    int flag = '1';
     int hours = 0, minutes = 0;
 
     printf("Введите напоминание:  ");
@@ -19,23 +19,24 @@ void input() {
     while (remind != '\n') {
         scanf("%c", &remind);
     }
-
-    while (flag == 1) {
-        printf("\n Введите время напоминания: ");
-
+     printf("\nВведите время напоминания: ");
+    do {
         char check;
-
-        if (scanf("%d%c", &hours, &check) != 2) {
-            flag = 1;
+        printf("nice");
+        if (scanf("%d", &hours) != 1 || hours > 24 || hours < 0) {
+            continue;
         } else {
             printf(":");
-            if (scanf("%d%c", &minutes, &check) != 2) {
-                flag = 1;
+            if (scanf("%d%c", &minutes, &check) != 2 || minutes > 60 || minutes < 0) {
+                // scanf("%d%c", &minutes, &check);
+                continue;
             } else {
                 flag = 0;
             }
         }
-    }
+        
+        
+    } while (flag == '1');
 
-    printf("%d %d", hours, minutes);
+    printf("%d : %d", hours, minutes);
 }
