@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <time.h> // как не странно библеотека для работы со временем ))
+#include "functions.h"
 
-void input();
+
+
 
 int main() {
     input(); // идея состоит в том, чтобы эта штука возвращала (часы * 60) + минуты
@@ -11,35 +11,3 @@ int main() {
     return 0;
 }
 
-void input() { // эта функция слишком ломанно работает, нужно нормально отслеживать ввод :(
-
-    char remind = '0';
-    int flag = '1';
-    int hours = 0, minutes = 0;
-
-    printf("Введите напоминание:  ");
-
-    while (remind != '\n') {
-        scanf("%c", &remind);
-    }
-     printf("\nВведите время напоминания:\n");
-    do {
-        scanf("%d", &hours);
-
-        if (hours > 24 || hours < 0) {
-            printf("\nошибка ввода\n");
-        } else {
-            printf(":");
-            scanf("%d", &minutes);
-            if (minutes > 60 || minutes < 0) {
-                printf("\nошибка ввода\n");
-            } else {
-                flag = 0;
-            }
-        }
-        
-        
-    } while (flag == '1');
-
-    printf("%d : %d", hours, minutes);
-}
