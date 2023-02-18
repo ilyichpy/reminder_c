@@ -19,17 +19,17 @@ void input() {
     while (remind != '\n') {
         scanf("%c", &remind);
     }
-     printf("\nВведите время напоминания: ");
+     printf("\nВведите время напоминания:\n");
     do {
-        char check;
-        printf("nice");
-        if (scanf("%d", &hours) != 1 || hours > 24 || hours < 0) {
-            continue;
+        scanf("%d", &hours);
+
+        if (hours > 24 || hours < 0) {
+            printf("\nошибка ввода\n");
         } else {
             printf(":");
-            if (scanf("%d%c", &minutes, &check) != 2 || minutes > 60 || minutes < 0) {
-                // scanf("%d%c", &minutes, &check);
-                continue;
+            scanf("%d", &minutes);
+            if (minutes > 60 || minutes < 0) {
+                printf("\nошибка ввода\n");
             } else {
                 flag = 0;
             }
