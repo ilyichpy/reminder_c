@@ -1,5 +1,5 @@
-#ifdef functions_h
-#define functios_h
+#ifdef FUNC_H
+#define FUNC_H
 
 #include <stdio.h>
 #include <time.h> // как не странно библеотека для работы со временем ))
