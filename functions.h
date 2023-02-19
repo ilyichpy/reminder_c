@@ -1,11 +1,10 @@
-#ifdef FUNC_H
-#define FUNC_H
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 
 #include <stdio.h>
 #include <time.h> // как не странно библеотека для работы со временем ))
 
-
-void input();
+int input();
 int current_time();
 
 
