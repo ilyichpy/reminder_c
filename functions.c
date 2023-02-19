@@ -2,7 +2,7 @@
 // #include <time.h>
 
 int current_time() {
-    int hours, minutes;
+    int hours, minutes, seconds;
 
     time_t now;
 
@@ -13,10 +13,11 @@ int current_time() {
     struct tm *local = localtime(&now);
 
     hours = local->tm_hour;         
-    minutes = local->tm_min;      
+    minutes = local->tm_min;
+    seconds = local->tm_sec;      
     // printf("%d %d", hours, minutes);
 
-    return hours * 60 + minutes;
+    return hours * 3600 + minutes * 60 + seconds;
 }
 
 int input() { // эта функция слишком ломанно работает, нужно нормально отслеживать ввод :(
@@ -29,7 +30,7 @@ int input() { // эта функция слишком ломанно работ�
 
     while (remind != '\n') {
         scanf("%c", &remind);
-    }
+    } // нужно добавить наверно в массив и сделать каким-то хреном 2 return 1 - для заметки, второй для времени
      printf("\nВведите время напоминания:\n");
     do {
         scanf("%d", &hours);
@@ -50,5 +51,5 @@ int input() { // эта функция слишком ломанно работ�
     } while (flag == '1');
 
     // printf("%d : %d", hours, minutes);
-    return hours * 60 + minutes;
+    return hours * 3600 + minutes * 60;
 }
