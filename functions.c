@@ -20,17 +20,24 @@ int current_time() {
     return hours * 3600 + minutes * 60 + seconds;
 }
 
-int input() { // эта функция слишком ломанно работает, нужно поделить на две (одна для заметки, другая для времени)
+int input_remind() { // эта функция слишком ломанно работает, нужно поделить на две (одна для заметки, другая для времени)
 
-    char remind = '0';
-    int flag = '1';
-    int hours = 0, minutes = 0;
-
+    char remind = '0', index = 0;
+    char *data = NULL;
+    data = (int*) malloc (sizeof(char)); // не уверен,что это правильно
     printf("Введите напоминание:  ");
 
     while (remind != '\n') {
-        scanf("%c", &remind);
+        data[index] = scanf("%c", &remind);
+        index++;
     }
+    return index;
+}
+
+int input_time() {
+    int hours = 0, minutes = 0;
+    int flag = 1;
+
      printf("\nВведите время напоминания:\n");
     do {
         scanf("%d", &hours);
@@ -48,7 +55,7 @@ int input() { // эта функция слишком ломанно работ�
         }
         
         
-    } while (flag == '1');
+    } while (flag == 1);
 
     // printf("%d : %d", hours, minutes);
     return hours * 3600 + minutes * 60;
