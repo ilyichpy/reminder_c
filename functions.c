@@ -24,11 +24,12 @@ int input_remind() { // эта функция слишком ломанно ра
 
     char remind = '0', index = 0;
     char *data = NULL;
-    data = (int*) malloc (sizeof(char)); // не уверен,что это правильно
+    data = (char*) malloc (sizeof(char)); // не уверен,что это правильно    // все ок, ток тип должен быть  char*, а не int*, так как data имеет тип char*
     printf("Введите напоминание:  ");
 
     while (remind != '\n') {
         data[index] = scanf("%c", &remind);
+        data = realloc(data, (index + 1) * sizeof(char));   // перевыдыляем память с у четом кол-во index
         index++;
     }
     return index;
