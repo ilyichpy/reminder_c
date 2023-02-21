@@ -21,9 +21,10 @@ void input_remind(char *name) {
     char remind = '0';
     printf("Введите напоминание: \t");
     FILE *fp = fopen(name, "a");  //сделаем все проще, будем записывать в файл, в назначенное время будем открывать этот файл.
+    scanf("\n%c", &remind);
     while (remind != '\n') {
-        remind = getchar();
-        fputc(remind, fp);   
+        fputc(remind, fi);
+        scanf("%c", &remind);
     }
     fclose(fp);
     printf("%c", remind);
