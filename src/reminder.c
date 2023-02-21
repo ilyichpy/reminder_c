@@ -11,7 +11,6 @@ int main() {
     //  gcc -Wall -Werror -Wextra functions.c reminder.c -o main.out  
     time_sleep = test_a - test_b;
     FreeConsole();//для винды
-    atexit();
     sleep(time_sleep);
     return 0;
 }
