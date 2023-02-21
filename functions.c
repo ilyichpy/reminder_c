@@ -20,11 +20,10 @@ int current_time() {
     return hours * 3600 + minutes * 60 + seconds;
 }
 
-    void input_remind() { // эта функция слишком ломанно работает, нужно поделить на две (одна для заметки, другая для времени)
+    void input_remind(*name) { // эта функция слишком ломанно работает, нужно поделить на две (одна для заметки, другая для времени)
 
     char index = 0;
     char *data = NULL;
-    file_name = "your_remind.txt"
     data = (char*) malloc (sizeof(char));
     printf("Введите напоминание:  ");
 
@@ -34,7 +33,7 @@ int current_time() {
         index++;
     }
 
-    FILE *fp = fopen(file_name, "w");  //сделаем все проще, будем записывать в файл, в назначенное время будем открывать этот файл.
+    FILE *fp = fopen(*name, "w");  //сделаем все проще, будем записывать в файл, в назначенное время будем открывать этот файл.
 }
 
 int input_time() {
