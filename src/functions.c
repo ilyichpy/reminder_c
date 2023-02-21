@@ -32,15 +32,13 @@ int input_time() {
     int hours = 0, minutes = 0;
     int flag = 1;
 
-     printf("\nВведите время напоминания:\n");
+     printf("\nВведите время напоминания: часы минуты\n");
     do {
-        scanf("%d", &hours);
+        scanf("%d %d", &hours, &minutes);
 
         if (hours > 24 || hours < 0) {
             printf("\nошибка ввода\n");
         } else {
-            printf(":");
-            scanf("%d", &minutes);
             if (minutes > 60 || minutes < 0) {
                 printf("\nошибка ввода\n");
             } else {

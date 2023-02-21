@@ -1,5 +1,4 @@
 #include "functions.h"
-#include <window.h> // для винды
 
 int main() {
     int test_a, test_b, time_sleep;
@@ -10,7 +9,7 @@ int main() {
 
     //  gcc -Wall -Werror -Wextra functions.c reminder.c -o main.out  
     time_sleep = test_a - test_b;
-    FreeConsole();//для винды
+
     sleep(time_sleep);
     return 0;
 }
