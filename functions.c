@@ -20,7 +20,7 @@ int current_time() {
     return hours * 3600 + minutes * 60 + seconds;
 }
 
-    char input_remind(char *name) { // эта функция слишком ломанно работает, нужно поделить на две (одна для заметки, другая для времени)
+int input_remind(char *name) { // эта функция слишком ломанно работает, нужно поделить на две (одна для заметки, другая для времени)
 
     char index = 0, remind = '0';
     int counter = 0;
