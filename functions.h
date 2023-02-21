@@ -8,7 +8,7 @@
 #include <ncurses.h> // http://alexber220.narod.ru/ncurses/print.htm#description сделаем терминал через эту библиотеку
 
 
-int input_remind();
+void input_remind();
 int input_time();
 int current_time();
 

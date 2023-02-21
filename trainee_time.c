@@ -1,6 +1,9 @@
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+
  
 // Печатаем текущую дату и время в C
 int main(void)
