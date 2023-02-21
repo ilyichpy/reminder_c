@@ -29,10 +29,11 @@ void input_remind(char *name) {
     printf("%c", remind);
 }
 
-int input_time() {
+int input_time(char *name) {
     int flag = 1;
     int hours = 0, minutes = 0;
-     printf("\nВведите время напоминания: часы минуты\n");
+    FILE *fp = fopen(name, "a");
+    printf("\nВведите время напоминания: часы минуты\n");
     do {
         scanf("%d %d", &hours, &minutes);
         printf("\n%d %d", hours, minutes);
@@ -48,6 +49,7 @@ int input_time() {
             }
         }
     } while (flag == 1);
-
+    fputc(hours, fp);
+    fputc(minute, fp);
     return hours * 3600 + minutes * 60;
 }
