@@ -18,13 +18,15 @@ int current_time() {
 
 void input_remind(char *name) {
 
-    char remind = '1';
+    char remind = '0';
     printf("Введите напоминание: \t");
     FILE *fp = fopen(name, "a");  //сделаем все проще, будем записывать в файл, в назначенное время будем открывать этот файл.
     while (remind != '\n') {
-        scanf("%c", &remind);
-        fputc(remind, fp);
+        remind = getchar();
+        fputc(remind, fp);   
     }
+    fclose(fp);
+    printf("%c", remind);
 }
 
 int input_time() {
