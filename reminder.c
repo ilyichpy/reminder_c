@@ -5,7 +5,7 @@ int main() {
     int test_a, test_b, time_sleep;
     char *file_name = "your_remind.txt";
     // char str;
-    FILE *f1 = input_remind(file_name);
+    input_remind(file_name);
     test_a = input_time(); // идея состоит в том, чтобы эта штука возвращала (часы * 60) + минуты
              // потом мы берем системное время и так же переводим в минуты
              // системное время - полученное время -- время скажем так сна
@@ -17,7 +17,6 @@ int main() {
     // FreeConsole();
     
     sleep(time_sleep);
-    FILE *f1 = fopen(file_name, "r");
     return 0;
 }
 
