@@ -8,8 +8,12 @@
 #include <ncurses.h> // http://alexber220.narod.ru/ncurses/print.htm#description сделаем терминал через эту библиотеку
 
 
+<<<<<<< HEAD
 void input_remind(char *name);
 int input_time(char *name);
+=======
+int input_remind(char *name);
+>>>>>>> developer1
 int current_time();
 
 

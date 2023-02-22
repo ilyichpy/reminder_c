@@ -16,27 +16,39 @@ int current_time() {
     return hours * 3600 + minutes * 60 + seconds;
 }
 
-void input_remind(char *name) {
+int input_remind(char *name) {
+    int flag = 1;
+    int hours = 0, minutes = 0;
+
+    time_t now;
+    time(&now);
+ 
+    struct tm *local = localtime(&now);
+    int day = local->tm_mday;  
+    int month = local->tm_mon;
+    int year = local->tm_year;
 
     char remind = '0';
     printf("Введите напоминание: \t");
-    FILE *fp = fopen(name, "a");  //сделаем все проще, будем записывать в файл, в назначенное время будем открывать этот файл.
+    FILE *fp = fopen(name, "a");
+    scanf("\n%c", &remind);
     while (remind != '\n') {
-        remind = getchar();
-        fputc(remind, fp);   
+        fputc(remind, fp);
+        scanf("%c", &remind);
     }
-    fclose(fp);
+    fputc('\t', fp);
     printf("%c", remind);
-}
 
+<<<<<<< HEAD
 int input_time(char *name) {
     int flag = 1;
     int hours = 0, minutes = 0;
     FILE *fp = fopen(name, "a");
+=======
+>>>>>>> developer1
     printf("\nВведите время напоминания: часы минуты\n");
     do {
         scanf("%d %d", &hours, &minutes);
-        printf("\n%d %d", hours, minutes);
 
         if (hours > 24 || hours < 0) {
             printf("\nошибка ввода\n");
@@ -49,7 +61,35 @@ int input_time(char *name) {
             }
         }
     } while (flag == 1);
+<<<<<<< HEAD
     fputc(hours, fp);
     fputc(minute, fp);
+=======
+    fputc('\t', fp);
+    if (day < 10) {
+        fprintf(fp,"       0%d.", day);
+    } else {
+        fprintf(fp,"        %d.", day);
+    }
+    if (month < 10) {
+        fprintf(fp,"0%d.", month);
+    } else {
+        fprintf(fp,"%d.", month);
+    }
+    fprintf(fp,"%d ", year + 1900);
+    if(hours < 10) {
+        fprintf(fp,"0%d:", hours);
+    } else {
+        fprintf(fp,"%d:", hours);
+    }
+    if (minutes < 10) {
+        fprintf(fp,"0%d\n", minutes);
+    } else {
+        fprintf(fp,"%d\n", minutes);
+    }
+    fclose(fp);
+
+
+>>>>>>> developer1
     return hours * 3600 + minutes * 60;
 }
