@@ -12,7 +12,7 @@ int main() {
     //  gcc -Wall -Werror -Wextra functions.c reminder.c -o main.out  
     // было принято волевое решение не прятать окно терминала
     time_sleep = test_a - test_b;
-    sleep(time_sleep + 5);
+    sleep(time_sleep);
     system("open your_remind.txt");
 
     return 0;

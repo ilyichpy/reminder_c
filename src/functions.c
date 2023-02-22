@@ -23,7 +23,7 @@ void input_remind(char *name) {
     FILE *fp = fopen(name, "a");  //сделаем все проще, будем записывать в файл, в назначенное время будем открывать этот файл.
     scanf("\n%c", &remind);
     while (remind != '\n') {
-        fputc(remind, fi);
+        fputc(remind, fp);
         scanf("%c", &remind);
     }
     fclose(fp);
