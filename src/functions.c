@@ -39,13 +39,6 @@ int input_remind(char *name) {
     fputc('\t', fp);
     printf("%c", remind);
 
-<<<<<<< HEAD
-int input_time(char *name) {
-    int flag = 1;
-    int hours = 0, minutes = 0;
-    FILE *fp = fopen(name, "a");
-=======
->>>>>>> developer1
     printf("\nВведите время напоминания: часы минуты\n");
     do {
         scanf("%d %d", &hours, &minutes);
@@ -61,10 +54,6 @@ int input_time(char *name) {
             }
         }
     } while (flag == 1);
-<<<<<<< HEAD
-    fputc(hours, fp);
-    fputc(minute, fp);
-=======
     fputc('\t', fp);
     if (day < 10) {
         fprintf(fp,"       0%d.", day);
@@ -90,6 +79,5 @@ int input_time(char *name) {
     fclose(fp);
 
 
->>>>>>> developer1
     return hours * 3600 + minutes * 60;
 }
