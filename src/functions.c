@@ -16,7 +16,17 @@ int current_time() {
     return hours * 3600 + minutes * 60 + seconds;
 }
 
-void input_remind(char *name) {
+int input_remind(char *name) {
+    int flag = 1;
+    int hours = 0, minutes = 0;
+
+    time_t now;
+    time(&now);
+ 
+    struct tm *local = localtime(&now);
+    int day = local->tm_mday;  
+    int month = local->tm_mon;
+    int year = local->tm_year;
 
     char remind = '0';
     printf("Введите напоминание: \t");
@@ -26,17 +36,12 @@ void input_remind(char *name) {
         fputc(remind, fp);
         scanf("%c", &remind);
     }
-    fclose(fp);
+    fputc('\t', fp);
     printf("%c", remind);
-}
 
-int input_time() {
-    int flag = 1;
-    int hours = 0, minutes = 0;
-     printf("\nВведите время напоминания: часы минуты\n");
+    printf("\nВведите время напоминания: часы минуты\n");
     do {
         scanf("%d %d", &hours, &minutes);
-        printf("\n%d %d", hours, minutes);
 
         if (hours > 24 || hours < 0) {
             printf("\nошибка ввода\n");
@@ -49,6 +54,51 @@ int input_time() {
             }
         }
     } while (flag == 1);
-
+    fputc('\t', fp);
+    if (day < 10) {
+        fprintf(fp,"       0%d.", day);
+    } else {
+        fprintf(fp,"        %d.", day);
+    }
+    if (month < 10) {
+        fprintf(fp,"0%d.", month);
+    } else {
+        fprintf(fp,"%d.", month);
+    }
+    fprintf(fp,"%d ", year + 1900);
+    if(hours < 10) {
+        fprintf(fp,"0%d:", hours);
+    } else {
+        fprintf(fp,"%d:", hours);
+    }
+    if (minutes < 10) {
+        fprintf(fp,"0%d\n", minutes);
+    } else {
+        fprintf(fp,"%d\n", minutes);
+    }
+    fclose(fp);
     return hours * 3600 + minutes * 60;
 }
+
+// int input_time() {
+    // int flag = 1;
+    // int hours = 0, minutes = 0;
+    //  printf("\nВведите время напоминания: часы минуты\n");
+    // do {
+    //     scanf("%d %d", &hours, &minutes);
+    //     printf("\n%d %d", hours, minutes);
+
+    //     if (hours > 24 || hours < 0) {
+    //         printf("\nошибка ввода\n");
+    //     } else {
+    //         if (minutes > 60 || minutes < 0) {
+    //             printf("\nошибка ввода\n");
+    //         } else {
+    //             flag = 0;
+    //             break;
+    //         }
+    //     }
+    // } while (flag == 1);
+
+    // return hours * 3600 + minutes * 60;
+// }
