@@ -31,6 +31,7 @@ int input_remind(char *name) {
     char remind = '0';
     printf("Введите напоминание: \t");
     FILE *fp = fopen(name, "a");
+    fputc('\n', fp);
     scanf("\n%c", &remind);
     while (remind != '\n') {
         fputc(remind, fp);
@@ -72,9 +73,9 @@ int input_remind(char *name) {
         fprintf(fp,"%d:", hours);
     }
     if (minutes < 10) {
-        fprintf(fp,"0%d\n", minutes);
+        fprintf(fp,"0%d", minutes);
     } else {
-        fprintf(fp,"%d\n", minutes);
+        fprintf(fp,"%d", minutes);
     }
     fclose(fp);
 
