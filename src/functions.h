@@ -9,7 +9,6 @@
 
 
 int input_remind(char *name);
-// int input_time();
 int current_time();
 
 
