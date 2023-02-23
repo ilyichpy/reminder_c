@@ -32,3 +32,8 @@ when the specified time comes, the file your_reminds.txt is opened, where all th
 
 # example of using the program
 ![example](gif/sample.gif)
+
+# applications
+
+This console application can be used to keep track of computer time.
+you launch the application, set it to a certain time, when the time comes, a window appears, which means the end of the work.
