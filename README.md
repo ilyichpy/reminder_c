@@ -2,13 +2,12 @@
 
 we made simple console app that can remember remind and whrite it in special file named your_remind.txt.
 
+![files](pic/files.png)
+
 ## available operating systems:
 - macos
 - linux
 
-
-
-![files](pic/files.png)
 
 ## How to run it?
 To start the program you need to run script.sh
@@ -31,3 +30,5 @@ when the specified time comes, the file your_reminds.txt is opened, where all th
 
 ![your_input.txt](pic/your_remind.png)
 
+# example of using the program
+![example](gif/example.gif)
