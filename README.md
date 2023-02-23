@@ -31,4 +31,4 @@ when the specified time comes, the file your_reminds.txt is opened, where all th
 ![your_input.txt](pic/your_remind.png)
 
 # example of using the program
-![example](gif/example.gif)
+![example](gif/sample.gif)
