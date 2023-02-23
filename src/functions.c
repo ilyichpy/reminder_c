@@ -29,7 +29,7 @@ int input_remind(char *name) {
     int year = local->tm_year;
 
     char remind = '0';
-    printf("Введите напоминание: \t");
+    printf("enter reminder: \t");
     FILE *fp = fopen(name, "a");
     fputc('\n', fp);
     scanf("\n%c", &remind);
@@ -40,15 +40,15 @@ int input_remind(char *name) {
     fputc('\t', fp);
     printf("%c", remind);
 
-    printf("\nВведите время напоминания: часы минуты\n");
+    printf("\nEnter reminder time: hours minutes\n");
     do {
         scanf("%d %d", &hours, &minutes);
 
         if (hours > 24 || hours < 0) {
-            printf("\nошибка ввода\n");
+            printf("\nInput Error\n");
         } else {
             if (minutes > 60 || minutes < 0) {
-                printf("\nошибка ввода\n");
+                printf("\nInput Error\n");
             } else {
                 flag = 0;
                 break;
