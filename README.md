@@ -13,10 +13,14 @@ we made simple console app that can remember remind and whrite it in special fil
 To start the program you need to run script.sh
 1. open your terminal
 2. enter folder path
-    >cd ../../reminder_c
+    ```bash
+    cd ../../reminder_c
+    ```
 
 3. run script.sh
-    >sh script.sh
+    ```bash
+    sh script.sh
+    ```
 
 Thats all, now your program is working
 

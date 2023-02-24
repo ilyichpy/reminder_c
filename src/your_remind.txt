@@ -1,2 +1,5 @@
 Hello! These are all your reminders for all time.
 add reminder_c code		        23.01.2023 19:44
+release		        23.01.2023 21:05
+зачем навонял?		        23.01.2023 21:06
+ilya		        23.01.2023 21:09
